@@ -1,4 +1,7 @@
 export default {
 	brandColor: "#2684FE",
-	brandHover: "#4E9BFE"
+	brandHover: "#4E9BFE",
+
+	moneyGreen: "#21eb57",
+	moneyRed: "#ff6363",
 }

@@ -1,41 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Theme from '../../Theme'
 import ViewButton from './ViewButton'
 
-export default function SideBar() {
-	const views = [
-		{ name: "PORFTOLIO", path: "/app", icon: "fas fa-layer-group" },
-		{ name: "RANKINGS", path: "/app/rankings", icon: "fas fa-trophy" },
-		{ name: "FAST FORWARD", path: "/app/fastforward", icon: "fas fa-forward" },
-		{ name: "ACHIEVEMENTS", path: "/app/achievements", icon: "fas fa-medal" },
-		{ name: "FORUM", path: "/app/forum", icon: "fas fa-comments" },
-		{ name: "SUPPORT", path: "/app/support", icon: "fas fa-question-circle" },
-		{ name: "SETTINGS", path: "/app/settings", icon: "fas fa-cog" },
-	]
+import * as NavData from '../../res/nav.json'
+
+const SideBar = () => {
+	
+	const [selectedIndex, setSelectedIndex] = useState(0)
+
 
 	return (
 		<div style={styles.root}>
 			<div style={styles.viewList}>
-				{views.map((view, index) => (
-					<ViewButton {...view} key={index} />
+				{NavData.views.map((view, index) => (
+					<ViewButton {...view}
+						key={index}
+						onClick={() => {
+							setSelectedIndex(index)
+						}}
+						selected={selectedIndex === index}
+					/>
 				))}
 			</div>
+			<div style={{ ...styles.indicator, marginTop: (selectedIndex * 5) + 1.5 + "em" }}></div>
 		</div>
 	)
+
 }
 
 const styles = {
 	root: {
 		position: "relative",
-		width: "6.5em",
-		height: "100%",
+		width: "7em",
+		height: "calc(100% - .5em)",
 		backgroundColor: Theme.brandColor,
 		borderTopRightRadius: "2em",
 		borderBottomRightRadius: "2em",
+		paddingTop: "1em",
+		marginTop: ".5em",
+		zIndex: 2,
+		boxSizing: "border-box"
 	},
 	viewList: {
 		position: "absolute",
-		flex: 1,
-		padding: "1em"
+		width: "100%",
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center"
+	},
+	indicator: {
+		position: "absolute",
+		left: "6em",
+		width: "1em",
+		height: "2em",
+		backgroundColor: "white",
+		clipPath: "polygon(100% 0, 100% 100%, 0 50%)",
+		transition: "margin-top .25s ease-in-out"
 	}
 }
+
+export default SideBar

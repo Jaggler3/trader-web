@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import Theme from '../../Theme'
 import { Link } from 'react-router-dom'
 
-export default function ViewButton({name, icon, path}) {
+export default function ViewButton({name, icon, path, onClick, selected}) {
 	const [hovering, setHovering] = useState(false)
 	return (
-		<Link to={path} style={{ textDecoration: 'none' }}>
+		<Link
+			to={path}
+			style={{ textDecoration: 'none' }}
+			onClick={onClick}
+		>
 			<div
 				onMouseMove={() => {
 					setHovering(true)
@@ -14,12 +18,17 @@ export default function ViewButton({name, icon, path}) {
 					setHovering(false)
 				}}
 				
-				style={{ ...styles.root, ...(hovering ? styles.rootHover : {}) }}
+				style={{
+					...styles.root,
+					...(selected ? styles.rootSelected : (
+						hovering ? styles.rootHover : {}
+					))
+				}}
 				>
-				<div style={styles.inner}>
-					<p style={styles.iconParent}><i className={icon} style={{ ...styles.icon, ...(hovering ? styles.iconHover : {}) }}></i></p>
-					<p style={{ ...styles.name, ...(hovering ? styles.nameHover : {}) }}>{name}</p>
-				</div>
+				<i
+					className={icon}
+					style={{ ...styles.icon, ...(selected ? styles.iconSelected : {}) }}
+				></i>
 			</div>
 		</Link>
 	)
@@ -27,49 +36,35 @@ export default function ViewButton({name, icon, path}) {
 
 const styles = {
 	root: {
-		borderRadius: "2em",
-		width: "4em",
-		height: "4em",
+		width: "3.5em",
+		height: "3.5em",
 		cursor: "pointer",
 		overflow: "hidden",
-		transition: "width .15s ease-in-out, box-shadow .15s",
+		transition: "background-color .15s",
 		marginTop: ".75em",
 		marginBottom: ".75em",
+		boxSizing: "border-box",
+		transform: "rotate(45deg)",
+		borderRadius: "1em",
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center"
+	},
+	rootSelected: {
+		backgroundColor: "white",
+		boxShadow: "0 0 1em rgba(100, 100, 100, 0.25)"
 	},
 	rootHover: {
-		width: "15em",
-		boxShadow: "0 0 .5em rgba(0, 0, 0, 0.2)"
-	},
-	inner: {
-		display: "flex",
-		backgroundColor: Theme.brandHover,
-		flexDirection: "row",
-		alignItems: "center",
-		height: "4em",
-		width: "15em",
-	},
-	iconParent: {
-		textAlign: "center",
-		width: "4em"
+		backgroundColor: Theme.brandHover
 	},
 	icon: {
 		color: "white",
-		fontSize: "2em",
-		transition: "font-size .25s"
+		fontSize: "1.75em",
+		transition: "color .25s, opacity .25s",
+		transform: "rotate(-45deg)",
 	},
-	iconHover: {
-		fontSize: "2.25em",	
-	},
-	name: {
-		color: "white",
-		fontWeight: "bold",
-		marginTop: ".5em",
-		opacity: ".25",
-		transition: "margin-top .25s ease-in-out, opacity .25s",
-		fontSize: "1.25em",
-	},
-	nameHover: {
-		opacity: "1",
-		marginTop: "0"
+	iconSelected: {
+		color: Theme.brandColor,
+		opacity: ".8"
 	}
 }

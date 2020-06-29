@@ -1,0 +1,38 @@
+{
+	"views": [{
+			"name": "PORFTOLIO",
+			"path": "/app",
+			"icon": "fas fa-layer-group"
+		},
+		{
+			"name": "RANKINGS",
+			"path": "/app/rankings",
+			"icon": "fas fa-trophy"
+		},
+		{
+			"name": "FAST FORWARD",
+			"path": "/app/fastforward",
+			"icon": "fas fa-forward"
+		},
+		{
+			"name": "ACHIEVEMENTS",
+			"path": "/app/achievements",
+			"icon": "fas fa-medal"
+		},
+		{
+			"name": "FORUM",
+			"path": "/app/forum",
+			"icon": "fas fa-comments"
+		},
+		{
+			"name": "SUPPORT",
+			"path": "/app/support",
+			"icon": "fas fa-question-circle"
+		},
+		{
+			"name": "SETTINGS",
+			"path": "/app/settings",
+			"icon": "fas fa-cog"
+		}
+	]
+}
