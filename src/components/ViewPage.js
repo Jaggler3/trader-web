@@ -4,7 +4,7 @@ export default function ViewPage(props) {
 	return (
 		<div style={{
 			display: "flex",
-			flexDirection: "row",
+			flexDirection: "column",
 			flexWrap: "wrap",
 			position: "relative",
 			padding: "4em 10em 10em 10em",

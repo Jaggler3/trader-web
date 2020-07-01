@@ -2,7 +2,7 @@ import React from 'react'
 import Theme from '../Theme'
 import { AddCommas } from '../util/Presentation'
 
-const MoneyDisplay = ({ value, size, colored, signed, caret, percent, percentSize, ...restProps}) => {
+const MoneyDisplay = ({ value, size = "1em", colored, signed, caret, percent, percentSize = "1em", ...restProps}) => {
 
 	let green = (value !== undefined && value >= 0) || (percent !== undefined && percent >= 0);
 
@@ -15,9 +15,9 @@ const MoneyDisplay = ({ value, size, colored, signed, caret, percent, percentSiz
 		}}>
 			{value && 
 				<p style={{
-					fontSize: size || "1em",
+					fontSize: size,
 					color: !colored ? "black" : (green ? Theme.moneyGreen : Theme.moneyRed)
-				}}>
+				}}> 
 					{signed && (value >= 0 ? "+" : "-")}${AddCommas(value)}
 				</p>
 			}
@@ -27,7 +27,7 @@ const MoneyDisplay = ({ value, size, colored, signed, caret, percent, percentSiz
 					className={"fas fa-caret-" + (green ? "up" : "down")}
 					style={{
 						margin: "0 .25em 0 .25em",
-						fontSize: size || "1em",
+						fontSize: size,
 						color: !colored ? "black" : (green ? Theme.moneyGreen : Theme.moneyRed)
 					}}
 				></i>
@@ -35,7 +35,7 @@ const MoneyDisplay = ({ value, size, colored, signed, caret, percent, percentSiz
 
 			{percent && 
 				<p style={{
-					fontSize: percentSize || "1em",
+					fontSize: percentSize,
 					color: !colored ? "black" : (green ? Theme.moneyGreen : Theme.moneyRed)
 				}}>
 					{signed && (percent >= 0 ? "+" : "-")}{AddCommas(percent)}%

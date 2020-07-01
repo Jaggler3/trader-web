@@ -6,8 +6,16 @@ import * as NavData from '../../res/nav.json'
 
 const SideBar = () => {
 	
-	const [selectedIndex, setSelectedIndex] = useState(0)
-
+	const getPathIndex = () => {
+		for (let i = 0; i < NavData.views.length; i++) {
+			if (NavData.views[i].path === window.location.pathname) {
+				return i;
+			}
+		}
+		return 0;
+	}
+	
+	const [selectedIndex, setSelectedIndex] = useState(getPathIndex())
 
 	return (
 		<div style={styles.root}>

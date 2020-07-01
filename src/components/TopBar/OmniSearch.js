@@ -28,17 +28,17 @@ const styles = {
 		position: "relative"
 	},
 	inputContainer: {
-		border: "2px solid gray",
+		border: "2px solid rgba(0, 0, 0, 0.25)",
 		borderRadius: "2em",
 		height: "100%",
 		width: "100%",
 		outline: "none",
 		display: "flex",
 		flexDirection: "row",
-		transition: "border-color .1s"
+		transition: "border .1s"
 	},
 	inputContainerActive: {
-		borderColor: Theme.brandColor
+		border: "2px solid " + Theme.brandColor
 	},
 	input: {
 		flex: 1,

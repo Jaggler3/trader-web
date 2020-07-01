@@ -7,7 +7,7 @@ export function AddCommas(num) {
 		decimalIndex = str.length;
 	}
 
-	for (let i = decimalIndex - 3; i >= 0; i -= 3) {
+	for (let i = decimalIndex - 3; i > 0; i -= 3) {
 		str = str.substring(0, i) + "," + str.substring(i)
 	}
 
