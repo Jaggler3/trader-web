@@ -13,7 +13,7 @@ const styles = {
 	root: {
 		position: "absolute",
 		top: "1em",
-		right: "1em",
+		right: "3em",
 		height: "3em",
 		display: "flex",
 		flexDirection: "row",

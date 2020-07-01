@@ -7,7 +7,7 @@ export default function TopBar() {
 	return (
 		<div style={styles.root}>
 			
-			<p style={styles.title}>TRADER</p>
+			<p style={styles.title}>TradePad</p>
 
 			<div style={styles.searchContainer}>
 				<OmniSearch />
@@ -27,13 +27,14 @@ const styles = {
 		height: "5em"
 	},
 	title: {
+		marginLeft: "calc(1em / 3)",
 		fontSize: "3em",
+		lineHeight: "calc(5em / 3)",
 		fontWeight: "700",
-		padding: ".33em 1em .33em 1em",
 		backgroundColor: "white",
 		borderBottomLeftRadius: "1em",
 		color: Theme.brandColor,
-		flex: 1
+		flex: 1,
 	},
 	searchContainer: {
 		position: "relative",

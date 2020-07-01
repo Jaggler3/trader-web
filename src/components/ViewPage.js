@@ -6,7 +6,8 @@ export default function ViewPage(props) {
 			display: "flex",
 			flexDirection: "row",
 			flexWrap: "wrap",
-			position: "relative"
+			position: "relative",
+			padding: "4em 10em 10em 10em",
 		}}>
 			{ props.children }
 		</div>

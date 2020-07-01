@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Panel from '../../components/Panel'
 import StockRow from '../../components/StockRow'
+import Theme from '../../Theme'
 
 export default function MyStocks() {
 
@@ -23,7 +24,6 @@ export default function MyStocks() {
 						style={{ ...styles.stockItem, ...(hover === item.name ? styles.stockItemHover : {}) }}
 						condensed
 						{...item}
-
 						onMouseMove={() => setHover(item.name)}
 						onMouseLeave={() => setHover(null)}
 					/>
@@ -35,24 +35,21 @@ export default function MyStocks() {
 
 const styles = {
 	root: {
+		width: "100%",
 		height: "20em",
 		display: "flex",
 		flexDirection: "column"
 	},
 	stockList: {
-		flex: 1,
-		width: "25em",
 		display: "flex",
 		flexDirection: "row",
-		flexWrap: "wrap",
-		position: "relative"
+		flexWrap: "wrap"
 	},
 	stockItem: {
-		width: "calc(50% - 5em)",
+		width: "calc(33% - 1.75em)",
 		padding: "1em",
-		backgroundColor: "transparent",
 	},
 	stockItemHover: {
-		backgroundColor: "rgba(0, 0, 0, 0.025)"
+		backgroundColor: Theme.brandLight
 	}
 }

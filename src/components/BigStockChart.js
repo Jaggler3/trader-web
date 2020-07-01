@@ -3,7 +3,7 @@ import React from 'react'
 import { AreaChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Area, CartesianGrid } from 'recharts';
 
 const PanelChart = props => (
-	<div style={{...{ width: "100%", height: "20em", paddingTop: "1em" }, ...props.style}}>
+	<div style={{...{ width: "100%", height: "30em", paddingTop: "1em" }, ...props.style}}>
 		<ResponsiveContainer>
 			<AreaChart
 				data={props.data || []}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ViewPage from '../components/ViewPage'
 import MyStocks from './porfolio/MyStocks'
+import MyOptions from './porfolio/MyOptions'
 import PorfolioHeader from './porfolio/PorfolioHeader'
 import BigStockChart from '../components/BigStockChart'
 
@@ -35,10 +36,9 @@ export default function Porfolio() {
 	return (
 		<ViewPage>
 			<PorfolioHeader data={portfolioHeaderData} />
-			<div style={{ maxWidth: "100%", display: "flex", flexDirection: "row" }}>
-				<MyStocks />
-				<BigStockChart animated={false} data={getLastAverages(30)} x="time" y="value" />
-			</div>
+			<BigStockChart data={getLastAverages(30)} x="time" y="value" />
+			<MyStocks />
+			<MyOptions />
 		</ViewPage>
 	)
 }

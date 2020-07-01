@@ -2,6 +2,7 @@ import React from 'react'
 import SideBar from './components/SideBar'
 import Theme from './Theme'
 import TopBar from './components/TopBar'
+import Scrollbar from 'react-scrollbars-custom'
 
 export default function Dashboard(props) {
 	return (
@@ -9,9 +10,9 @@ export default function Dashboard(props) {
 			<TopBar />
 			<div style={styles.container}>
 				<SideBar />
-				<div style={styles.containerContent}>
+				<Scrollbar style={styles.containerContent}>
 					{ props.children }
-				</div>
+				</Scrollbar>
 			</div>
 		</div>
 	)
@@ -35,8 +36,6 @@ const styles = {
 		flex: 1,
 		height: "100%",
 		maxHeight: "100%",
-		overflowY: "scroll",
-		overflowX: "hidden",
 		boxSizing: "border-box",
 		padding: ".5em 1em 0 1em"
 	}

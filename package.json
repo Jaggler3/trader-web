@@ -1,5 +1,5 @@
 {
-  "name": "trader-web",
+  "name": "tradepad",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +11,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-scrollbar": "^0.5.6",
+    "react-scrollbars-custom": "^4.0.25",
     "recharts": "^1.8.5"
   },
   "scripts": {
