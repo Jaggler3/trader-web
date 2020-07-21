@@ -1,12 +1,24 @@
 import React from 'react'
 import Theme from '../../Theme'
 import MoneyDisplay from '../../components/MoneyDisplay'
+import { motion } from 'framer-motion'
 
-export const HeaderItem = ({ subtitle, ...displayProps }) =>
-	<div style={styles.item}>
+export const HeaderItem = ({ subtitle, delay = 0, ...displayProps }) =>
+	<motion.div
+		style={styles.item}
+		animate={{
+			y: [-20, 0],
+			opacity: [0, 1],
+			transition: {
+				duration: .25,
+				delay: delay * .1,
+				ease: "easeIn"
+			}
+		}}
+	>
 		<MoneyDisplay {...displayProps} />
 		<p style={styles.subtitle}>{ subtitle }</p>
-	</div>
+	</motion.div>
 
 export default function PorfolioHeader({ data }) {
 	return (
@@ -20,6 +32,7 @@ export default function PorfolioHeader({ data }) {
 			/>
 			<HeaderItem
 				subtitle="DAILY RETURN"
+				delay={1}
 				value={data["daily_return"]}
 				caret
 				colored
@@ -28,6 +41,7 @@ export default function PorfolioHeader({ data }) {
 			/>
 			<HeaderItem
 				subtitle="GROWTH"
+				delay={2}
 				percent={data["daily_growth"]}
 				caret
 				colored
@@ -36,6 +50,7 @@ export default function PorfolioHeader({ data }) {
 				size="2em"
 			/>
 			<HeaderItem
+				delay={3}
 				subtitle="CASH"
 				value={data["cash"]}
 				caret

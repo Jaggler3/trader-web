@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import ViewPage from '../components/ViewPage'
 import MyStocks from './porfolio/MyStocks'
 import MyOptions from './porfolio/MyOptions'
 import PorfolioHeader from './porfolio/PorfolioHeader'
 import BigStockChart from '../components/BigStockChart'
+import { motion } from 'framer-motion'
 
-export default function Porfolio() {
+export const Porfolio = (props) => {
 
 	let portfolioHeaderData = {
 		"investments": 2540829.25,
@@ -14,7 +16,7 @@ export default function Porfolio() {
 		"cash": 12501895.69
 	}
 
-	const [stockAvg, setStockAvg] = useState([
+	const stockAvg = [
 		{ time: "18:05", value: 1.05 },
 		{ time: "18:10", value: 1.09 },
 		{ time: "18:15", value: 1.11 },
@@ -23,7 +25,7 @@ export default function Porfolio() {
 		{ time: "18:30", value: 1.75 },
 		{ time: "18:35", value: 1.65 },
 		{ time: "18:40", value: 2.05 },
-	])
+	];
 
 	const getLastAverages = count => {
 		if(stockAvg.length <= count) {
@@ -42,3 +44,13 @@ export default function Porfolio() {
 		</ViewPage>
 	)
 }
+
+const mapStateToProps = (state) => ({
+	state: state
+})
+const mapDispatchToProps = {
+	
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Porfolio)
+

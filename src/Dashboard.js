@@ -1,10 +1,12 @@
 import React from 'react'
-import SideBar from './components/SideBar'
-import Theme from './Theme'
-import TopBar from './components/TopBar'
 import Scrollbar from 'react-scrollbars-custom'
+import { connect } from 'react-redux'
 
-export default function Dashboard(props) {
+import SideBar from './components/SideBar'
+import TopBar from './components/TopBar'
+import StockView from './components/StockView/index'
+
+export function Dashboard(props) {
 	return (
 		<div style={styles.root}>
 			<TopBar />
@@ -14,9 +16,23 @@ export default function Dashboard(props) {
 					{ props.children }
 				</Scrollbar>
 			</div>
+			{ props.state.ui.stockViewOpen && (
+				<StockView />
+			)}
 		</div>
 	)
 }
+
+const mapStateToProps = (state) => ({
+	state: state
+})
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
+
 
 const styles = {
 	root: {
@@ -24,7 +40,8 @@ const styles = {
 		height: "100vh",
 		animation: "fadeIn .5s",
 		display: "flex",
-		flexDirection: "column"
+		flexDirection: "column",
+		zIndex: 1
 	},
 	container: {
 		flex: 1,

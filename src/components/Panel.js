@@ -29,7 +29,7 @@ const styles = {
 		transition: "background-color .25s"
 	},
 	rootHover: {
-		backgroundColor: "rgba(0, 0, 0, 0.025)"	
+		backgroundColor: "rgba(0, 0, 0, 0.025)"
 	},
 	title: {
 		color: Theme.brandColor,

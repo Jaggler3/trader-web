@@ -6,11 +6,10 @@ import Theme from '../../Theme'
 export default function MyStocks() {
 
 	const stocks = [
-		{ name: "AAPL", change: "2.53"},
-		{ name: "REGN", change: "0.23"},
-		{ name: "WBA", change: "7.37"},
-		{ name: "VRTX", change: "7.77"},
-		{ name: "VTR", change: "5.67"},
+		{ positionID: 0, name: "AAPL", change: 2.53 },
+		{ positionID: 1, name: "REGN", change: -0.23 },
+		{ positionID: 2, name: "WBA", change: 7.37 },
+		{ positionID: 3, name: "VTR", change: 5.67 },
 	]
 
 	const [hover, setHover] = useState(null)
@@ -18,16 +17,18 @@ export default function MyStocks() {
 	return (
 		<Panel title="my stocks" style={styles.root}>
 			<div style={styles.stockList}>
-				{stocks.map(item => (
+				{stocks.length > 0 && stocks.map(item => (
 					<StockRow
-						key={item.name}
-						style={{ ...styles.stockItem, ...(hover === item.name ? styles.stockItemHover : {}) }}
+						key={item.positionID}
+						style={{ ...styles.stock, ...(hover === item.positionID ? styles.stockHover : {}) }}
 						condensed
 						{...item}
-						onMouseMove={() => setHover(item.name)}
+						onMouseMove={() => setHover(item.positionID)}
 						onMouseLeave={() => setHover(null)}
 					/>
-				))}
+				)) || (
+					"You have no investments to show yet. Search for a stock to buy and your purchases will appear here!"
+				)}
 			</div>
 		</Panel>
 	)
@@ -43,13 +44,14 @@ const styles = {
 	stockList: {
 		display: "flex",
 		flexDirection: "row",
-		flexWrap: "wrap"
+		flexWrap: "wrap",
 	},
-	stockItem: {
-		width: "calc(33% - 1.75em)",
+	stock: {
+		width: "calc(33.33% - 2em)",
 		padding: "1em",
+		transition: "background-color .2s"
 	},
-	stockItemHover: {
+	stockHover: {
 		backgroundColor: Theme.brandLight
 	}
 }
