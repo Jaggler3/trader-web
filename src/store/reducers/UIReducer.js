@@ -26,7 +26,8 @@ export default (ui, { type, payload }) => {
 		case "open option data":
 			return $({
 				optionViewOpen: true,
-				optionViewPositionID: payload	
+				stockViewSymbol: payload.name,
+				optionViewPositionID: payload.positionID	
 			})
 		case "close option data":
 			return $({

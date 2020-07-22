@@ -10,7 +10,7 @@ export default function ViewPage(props) {
 				flexDirection: "column",
 				flexWrap: "wrap",
 				position: "relative",
-				padding: "4em 10em 10em 10em",
+				padding: "4em 5% 10em 5%",
 				...props.style
 			}}
 		>

@@ -53,7 +53,7 @@ const StockView = (props) => {
 							initial={props.stockViewTab}	
 						/>
 						{props.stockViewTab === "stocks" ? (
-							<Ownership />
+							<Ownership name={props.stockViewSymbol} />
 						) : (
 							<Contracts name={props.stockViewSymbol} />
 						)}

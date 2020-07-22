@@ -46,7 +46,8 @@ const styles = {
 		height: "2em",
 		display: "flex",
 		flexDirection: "row",
-		borderRadius: ".5em"
+		borderRadius: ".5em",
+		userSelect: "none"
 	},
 	name: {
 		fontSize: "1.25em",

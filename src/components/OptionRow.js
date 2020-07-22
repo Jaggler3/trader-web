@@ -11,7 +11,7 @@ export function OptionRow({ positionID, name, type, strike, exp, style, onMouseM
 			style={{...styles.root, ...style}}
 			onMouseMove={onMouseMove}
 			onMouseLeave={onMouseLeave}
-			onClick={() => stateProps.openOptionData(positionID)}
+			onClick={() => stateProps.openOptionData(name, positionID)}
 		>
 			<div style={styles.vbox}>
 				<p style={styles.name}>{name}</p>
@@ -35,7 +35,7 @@ const mapStateToProps = (state) => ({
 })
 const mapDispatchToProps = (dispatch) => {
 	return {
-		openOptionData: positionID => dispatch({ type: "open option data", payload: positionID })
+		openOptionData: (name, positionID) => dispatch({ type: "open option data", payload: { name: name, positionID: positionID }})
 	}
 }
 
