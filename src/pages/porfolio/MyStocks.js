@@ -36,7 +36,7 @@ export default function MyStocks() {
 
 const styles = {
 	root: {
-		width: "100%",
+		flex: 1,
 		height: "20em",
 		display: "flex",
 		flexDirection: "column"

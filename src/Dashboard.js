@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import SideBar from './components/SideBar'
 import TopBar from './components/TopBar'
 import StockView from './components/StockView/index'
+import OptionView from './components/OptionView'
 
 export function Dashboard(props) {
 	return (
@@ -16,8 +17,11 @@ export function Dashboard(props) {
 					{ props.children }
 				</Scrollbar>
 			</div>
-			{ props.state.ui.stockViewOpen && (
+			{props.state.ui.stockViewOpen && (
 				<StockView />
+			)}
+			{props.state.ui.optionViewOpen && (
+				<OptionView />
 			)}
 		</div>
 	)

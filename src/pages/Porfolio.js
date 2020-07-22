@@ -39,10 +39,20 @@ export const Porfolio = (props) => {
 		<ViewPage>
 			<PorfolioHeader data={portfolioHeaderData} />
 			<BigStockChart data={getLastAverages(30)} x="time" y="value" />
-			<MyStocks />
-			<MyOptions />
+			<div style={styles.positions}>
+				<MyStocks />
+				<MyOptions />
+			</div>
 		</ViewPage>
 	)
+}
+
+const styles = {
+	positions: {
+		display: "flex",
+		flexDirection: "row",
+		position: "relative"
+	}
 }
 
 const mapStateToProps = (state) => ({

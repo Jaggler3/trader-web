@@ -26,7 +26,8 @@ const styles = {
 		padding: "1em",
 		minHeight: "5em",
 		minWidth: "10em",
-		transition: "background-color .25s"
+		transition: "background-color .25s",
+		borderRadius: ".5em"
 	},
 	rootHover: {
 		backgroundColor: "rgba(0, 0, 0, 0.025)"

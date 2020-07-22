@@ -2,9 +2,9 @@ import React from 'react'
 import Theme from '../Theme'
 import { AddCommas } from '../util/Presentation'
 
-const MoneyDisplay = ({ value, size = "1em", colored, signed, caret, percent, percentSize = "1em", bold, ...restProps}) => {
+const MoneyDisplay = ({ value, size = "1em", colored, signed, caret, red, percent, percentSize = "1em", bold, ...restProps}) => {
 
-	let green = (value !== undefined && value >= 0) || (percent !== undefined && percent >= 0);
+	let green = !red && (value !== undefined && value >= 0) || (percent !== undefined && percent >= 0);
 
 	return (
 		<div style={{

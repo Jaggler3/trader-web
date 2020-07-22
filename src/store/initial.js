@@ -2,7 +2,9 @@ export const InitialState = {
 	ui: {
 		stockViewSymbol: "",
 		stockViewOpen: false,
-		stockViewTab: "stocks"
+		stockViewTab: "stocks",
+		optionViewOpen: false,
+		optionViewPositionID: -1,
 	}
 }
 

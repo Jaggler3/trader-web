@@ -46,6 +46,7 @@ const styles = {
 		height: "2em",
 		display: "flex",
 		flexDirection: "row",
+		borderRadius: ".5em"
 	},
 	name: {
 		fontSize: "1.25em",

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Theme from '../Theme';
 
-export default function TabSelect({ tabNames, onSelect, ...restProps }) {
+export default function TabSelect({ tabNames, onSelect, initial, ...restProps }) {
 
-	const [selecton, setSelection] = useState(0);
+	const [selecton, setSelection] = useState(initial ? tabNames.indexOf(initial) : 0);
 
 	const select = (index) => {
 		setSelection(index);
