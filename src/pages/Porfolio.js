@@ -5,9 +5,8 @@ import MyStocks from './porfolio/MyStocks'
 import MyOptions from './porfolio/MyOptions'
 import PorfolioHeader from './porfolio/PorfolioHeader'
 import BigStockChart from '../components/BigStockChart'
-import { motion } from 'framer-motion'
 
-export const Porfolio = (props) => {
+export const Porfolio = () => {
 
 	let portfolioHeaderData = {
 		"investments": 2540829.25,

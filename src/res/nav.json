@@ -1,5 +1,6 @@
 {
-	"views": [{
+	"views": [
+		{
 			"name": "PORFTOLIO",
 			"path": "/app",
 			"icon": "fas fa-layer-group"
@@ -9,7 +10,6 @@
 			"path": "/app/rankings",
 			"icon": "fas fa-trophy"
 		},
-		
 		{
 			"name": "ACHIEVEMENTS",
 			"path": "/app/achievements",

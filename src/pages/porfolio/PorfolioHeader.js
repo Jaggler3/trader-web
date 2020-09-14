@@ -20,46 +20,46 @@ export const HeaderItem = ({ subtitle, delay = 0, ...displayProps }) =>
 		<p style={styles.subtitle}>{ subtitle }</p>
 	</motion.div>
 
-export default function PorfolioHeader({ data }) {
-	return (
-		<div style={styles.root}>
-			<HeaderItem
-				subtitle="INVESTMENTS"
-				value={data["investments"]}
-				caret
-				colored
-				size="2em"
-			/>
-			<HeaderItem
-				subtitle="DAILY RETURN"
-				delay={1}
-				value={data["daily_return"]}
-				caret
-				colored
-				signed
-				size="2em"
-			/>
-			<HeaderItem
-				subtitle="GROWTH"
-				delay={2}
-				percent={data["daily_growth"]}
-				caret
-				colored
-				signed
-				percentSize="2em"
-				size="2em"
-			/>
-			<HeaderItem
-				delay={3}
-				subtitle="CASH"
-				value={data["cash"]}
-				caret
-				colored
-				size="2em"
-			/>
-		</div>
-	)
-}
+const PorfolioHeader = ({ data }) => (
+	<div style={styles.root}>
+		<HeaderItem
+			subtitle="INVESTMENTS"
+			value={data["investments"]}
+			caret
+			colored
+			size="2em"
+		/>
+		<HeaderItem
+			subtitle="DAILY RETURN"
+			delay={1}
+			value={data["daily_return"]}
+			caret
+			colored
+			signed
+			size="2em"
+		/>
+		<HeaderItem
+			subtitle="GROWTH"
+			delay={2}
+			percent={data["daily_growth"]}
+			caret
+			colored
+			signed
+			percentSize="2em"
+			size="2em"
+		/>
+		<HeaderItem
+			delay={3}
+			subtitle="CASH"
+			value={data["cash"]}
+			caret
+			colored
+			size="2em"
+		/>
+	</div>
+)
+
+export default PorfolioHeader;
 
 const styles = {
 	root: {

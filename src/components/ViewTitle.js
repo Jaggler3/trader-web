@@ -1,9 +1,9 @@
 import React from 'react'
-import Theme from '../Theme'
-
 import { motion } from 'framer-motion'
 
-export default props => (
+import Theme from '../Theme'
+
+export default props =>
 	<motion.p
 		style={{
 			fontSize: "2.5em",
@@ -21,4 +21,3 @@ export default props => (
 	>
 		{props.children}
 	</motion.p>
-)

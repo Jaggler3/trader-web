@@ -2,27 +2,25 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Theme from '../../Theme'
 
-export default function AchievementDisplay({ item, completed, animDelay }) {
-	return (
-		<motion.div
-			animate={{
-				x: [50, 0],
-				opacity: [0, completed ? 0.5 : 1],
-				transition: {
-					duration: 0.25,
-					delay: animDelay * 0.1
-				}
-			}}
-			style={{ ...styles.root, ...(completed ? styles.rootCompleted : {})}}
-		>
-			<i style={styles.icon} className={(completed ? "fas" : "far") + " fa-star"}></i>
-			<div style={{ ...styles.container, ...(completed ? styles.containerCompleted : {})}}>
-				<i style={styles.itemIcon} className={item.icon}></i>
-				<p style={styles.itemName}>{item.name}</p>
-			</div>
-		</motion.div>
-	)
-}
+const AchievementDisplay = ({ item, completed, animDelay }) => (
+	<motion.div
+		animate={{
+			x: [50, 0],
+			opacity: [0, completed ? 0.5 : 1],
+			transition: {
+				duration: 0.25,
+				delay: animDelay * 0.1
+			}
+		}}
+		style={{ ...styles.root, ...(completed ? styles.rootCompleted : {})}}
+	>
+		<i style={styles.icon} className={(completed ? "fas" : "far") + " fa-star"}></i>
+		<div style={{ ...styles.container, ...(completed ? styles.containerCompleted : {})}}>
+			<i style={styles.itemIcon} className={item.icon}></i>
+			<p style={styles.itemName}>{item.name}</p>
+		</div>
+	</motion.div>
+)
 
 const styles = {
 	root: {

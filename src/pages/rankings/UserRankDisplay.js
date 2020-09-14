@@ -2,24 +2,27 @@ import React from 'react'
 import MoneyDisplay from '../../components/MoneyDisplay'
 import Theme from '../../Theme'
 
-export default function UserRankDisplay({ user, rank = "?", type = "money", isSelf = false }) {
-	return (
-		<div style={styles.root}>
-			<p style={styles.rank}>{rank}</p>
-			<p>{user.name}</p>
-			{isSelf && (
-				<strong>&nbsp;(You!)</strong>
-			)}
-			<div style={styles.space}></div>
-			{type === "money" ? (
-				<MoneyDisplay value={user.value} />
-			) : (
-				<p></p>
-			)}
-		
-		</div>
-	)
-}
+const UserRankDisplay = ({ user, rank = "?", type = "money", isSelf = false }) => (
+	<div style={styles.root}>
+		<p style={styles.rank}>
+			{rank}
+		</p>
+		<p>
+			{user.name}
+		</p>
+		{isSelf && (
+			<strong>&nbsp;(You!)</strong>
+		)}
+		<div style={styles.space}></div>
+		{type === "money" ? (
+			<MoneyDisplay value={user.value} />
+		) : (
+			<p></p>
+		)}
+	</div>
+)
+
+export default UserRankDisplay;
 
 const styles = {
 	root: {

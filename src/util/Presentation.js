@@ -1,6 +1,5 @@
-export function AddCommas(num) {
+export const AddCommas = (num) => {
 	let str = num.toString();
-
 	let decimalIndex = str.indexOf(".");
 
 	if (decimalIndex === -1) {

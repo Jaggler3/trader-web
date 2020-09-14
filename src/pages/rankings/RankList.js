@@ -2,17 +2,17 @@ import React from 'react'
 import UserRankDisplay from './UserRankDisplay'
 import Theme from '../../Theme'
 
-export default function RankList({ data, rank }) {
-	return (
-		<div style={styles.root}>
-			{data && data.map((item, index) => (
-				<UserRankDisplay isSelf={rank === index + 1} user={item} rank={index + 1} key={index} />
-			))}
-			<div style={styles.fake1}></div>
-			<div style={styles.fake2}></div>
-		</div>
-	)
-}
+const RankList = ({ data, rank }) => (
+	<div style={styles.root}>
+		{data && data.map((item, index) => (
+			<UserRankDisplay isSelf={rank === index + 1} user={item} rank={index + 1} key={index} />
+		))}
+		<div style={styles.fake1}></div>
+		<div style={styles.fake2}></div>
+	</div>
+)
+
+export default RankList;
 
 const styles = {
 	root: {

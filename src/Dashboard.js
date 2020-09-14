@@ -7,25 +7,23 @@ import TopBar from './components/TopBar'
 import StockView from './components/StockView/index'
 import OptionView from './components/OptionView'
 
-export function Dashboard(props) {
-	return (
-		<div style={styles.root}>
-			<TopBar />
-			<div style={styles.container}>
-				<SideBar />
-				<Scrollbar style={styles.containerContent}>
-					{ props.children }
-				</Scrollbar>
-			</div>
-			{props.state.ui.stockViewOpen && (
-				<StockView />
-			)}
-			{props.state.ui.optionViewOpen && (
-				<OptionView />
-			)}
+export const Dashboard = ({ state, children }) => (
+	<div style={styles.root}>
+		<TopBar />
+		<div style={styles.container}>
+			<SideBar />
+			<Scrollbar style={styles.containerContent}>
+				{ children }
+			</Scrollbar>
 		</div>
-	)
-}
+		{state.ui.stockViewOpen && (
+			<StockView />
+		)}
+		{state.ui.optionViewOpen && (
+			<OptionView />
+		)}
+	</div>
+)
 
 const mapStateToProps = (state) => ({
 	state: state

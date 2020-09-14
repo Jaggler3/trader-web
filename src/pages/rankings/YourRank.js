@@ -1,16 +1,16 @@
 import React from 'react'
 import Theme from '../../Theme'
 
-export default function YourRank({ rank }) {
-	return (
-		<div style={styles.root}>
-			<p style={styles.title}>Your Rank</p>
-			<div style={styles.rankParent}>
-				<p style={styles.rank}>{rank}</p>
-			</div>
+const YourRank = ({ rank }) => (
+	<div style={styles.root}>
+		<p style={styles.title}>Your Rank</p>
+		<div style={styles.rankParent}>
+			<p style={styles.rank}>{rank}</p>
 		</div>
-	)
-}
+	</div>
+)
+
+export default YourRank;
 
 const styles = {
 	root: {
