@@ -22,6 +22,8 @@ const AchievementDisplay = ({ item, completed, animDelay }) => (
 	</motion.div>
 )
 
+export default AchievementDisplay;
+
 const styles = {
 	root: {
 		display: "flex",

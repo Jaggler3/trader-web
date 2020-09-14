@@ -17,6 +17,8 @@ const GainRanks = ({ data, rank }) => (
 	</>
 )
 
+export default GainRanks;
+
 const styles = {
 	root: {
 		flex: 1
