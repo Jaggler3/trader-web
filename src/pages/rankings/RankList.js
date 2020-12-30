@@ -29,7 +29,7 @@ const styles = {
 		border: "1px solid " + Theme.brandHover,
 		height: "1.5em",
 		margin: ".3em 6em 0 6em",
-		borderRadius: ".25em",
+		borderRadius: ".35em",
 		opacity: .25
 	}
 }
